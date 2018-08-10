@@ -19,6 +19,8 @@ class NetworkManager: NSObject {
         "site" : "stackoverflow"
     ]
     let searchPath: String = "search"
+    let questionsPath: String = "questions/"
+    let answersPath: String = "answers/"
     
     //MARK: - GET search
     func getSearch(for query: String, success: @escaping ([[String:Any]]) -> (), failure: @escaping (_ statusCode: Int?, _ message: String) -> ())  {
@@ -36,6 +38,35 @@ class NetworkManager: NSObject {
                     if let JSON = response.result.value as? [String : Any] {
                         if let questions = JSON["items"] as? [[String:Any]] {
                             success(questions)
+                            break
+                        }
+                    }
+                    failure(nil, "Unexpected error: Reading response failed!")
+                case .failure(let error):
+                    let errorData = self.getErrorData(error, response: response)
+                    failure(errorData.statusCode, errorData.message)
+                }
+        }
+    }
+    
+    //MARK: - GET answers
+    func getAnswers(for questionId: String, success: @escaping ([[String:Any]]) -> (), failure: @escaping (_ statusCode: Int?, _ message: String) -> ()) {
+        let url = baseURL + questionsPath + "\(questionId)/" + answersPath
+        var parameters = baseParameters
+        parameters["order"] = "desc"
+        parameters["sort"] = "votes"
+        parameters["filter"] = "withbody"
+        
+        //MARK: <#TODO: - Pagination#>
+        
+        Alamofire.request(url, method: .get, parameters: parameters, headers: nil)
+            .validate(statusCode: 200..<300)
+            .responseJSON { (response) in
+                switch response.result {
+                case .success:
+                    if let JSON = response.result.value as? [String : Any] {
+                        if let answers = JSON["items"] as? [[String:Any]] {
+                            success(answers)
                             break
                         }
                     }

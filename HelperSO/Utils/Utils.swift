@@ -8,6 +8,34 @@
 
 import UIKit
 
+class Utils {
+    static func getDateStringFromTimeStamp(timeStamp : Double) -> String {
+        
+        let date = NSDate(timeIntervalSince1970: timeStamp)
+        
+        let dayTimePeriodFormatter = DateFormatter()
+        dayTimePeriodFormatter.dateFormat = "dd MMM YY, hh:mm a"
+        // UnComment below to get only time
+        //  dayTimePeriodFormatter.dateFormat = "hh:mm a"
+        
+        let dateString = dayTimePeriodFormatter.string(from: date as Date)
+        return dateString
+    }
+}
+
+//MARK: - UIView Corner Radius
+extension UIView {
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+}
+
 //MARK: - Table View
 extension UITableView {
     //MARK: Register cell
@@ -28,5 +56,25 @@ extension UITableView {
         }
         
         return cell
+    }
+}
+
+//MARK: - String
+extension String {
+    //MARK: - Decode HTML
+    var stringWithDecodedHTMLChars: String {
+        var newString = self
+        let specialCharsDictionary = [
+            "&amp;" : "&",
+            "&lt;" : "<",
+            "&gt;" : ">",
+            "&quot;" : "\"",
+            "&apos;" : "'"
+        ];
+        
+        for (encodedChars, decodedChars) in specialCharsDictionary {
+            newString = newString.replacingOccurrences(of: encodedChars, with: decodedChars, options: NSString.CompareOptions.literal, range: nil)
+        }
+        return newString
     }
 }

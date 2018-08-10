@@ -27,6 +27,12 @@
 		55CE8E69211D021B007AD9C5 /* TableArrayDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E68211D021B007AD9C5 /* TableArrayDataProvider.swift */; };
 		55CE8E6B211D0249007AD9C5 /* TableArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E6A211D0249007AD9C5 /* TableArrayDataSource.swift */; };
 		55CE8E6D211D047A007AD9C5 /* QuestionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E6C211D047A007AD9C5 /* QuestionsDataSource.swift */; };
+		55CE8E6F211D82E9007AD9C5 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E6E211D82E9007AD9C5 /* DetailsViewController.swift */; };
+		55CE8E71211D8A2D007AD9C5 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E70211D8A2D007AD9C5 /* Answer.swift */; };
+		55CE8E73211D8BFA007AD9C5 /* AnswersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E72211D8BFA007AD9C5 /* AnswersViewModel.swift */; };
+		55CE8E76211DA1EB007AD9C5 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E74211DA1EB007AD9C5 /* AnswerTableViewCell.swift */; };
+		55CE8E77211DA1EB007AD9C5 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55CE8E75211DA1EB007AD9C5 /* AnswerTableViewCell.xib */; };
+		55CE8E79211DA7A5007AD9C5 /* AnswersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CE8E78211DA7A5007AD9C5 /* AnswersDataSource.swift */; };
 		AC62478F81E0C63A82D00853 /* Pods_HelperSO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD99E98CC15F7154386FE5E /* Pods_HelperSO.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +61,12 @@
 		55CE8E68211D021B007AD9C5 /* TableArrayDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableArrayDataProvider.swift; sourceTree = "<group>"; };
 		55CE8E6A211D0249007AD9C5 /* TableArrayDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableArrayDataSource.swift; sourceTree = "<group>"; };
 		55CE8E6C211D047A007AD9C5 /* QuestionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsDataSource.swift; sourceTree = "<group>"; };
+		55CE8E6E211D82E9007AD9C5 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		55CE8E70211D8A2D007AD9C5 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		55CE8E72211D8BFA007AD9C5 /* AnswersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersViewModel.swift; sourceTree = "<group>"; };
+		55CE8E74211DA1EB007AD9C5 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
+		55CE8E75211DA1EB007AD9C5 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
+		55CE8E78211DA7A5007AD9C5 /* AnswersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersDataSource.swift; sourceTree = "<group>"; };
 		DDD99E98CC15F7154386FE5E /* Pods_HelperSO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelperSO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,13 +113,12 @@
 			isa = PBXGroup;
 			children = (
 				55CE8E55211CF670007AD9C5 /* Utils */,
+				556CD3BF211CA439007260E7 /* Managers */,
 				55CE8E58211CFB53007AD9C5 /* Views */,
 				556CD3C3211CB14A007260E7 /* Models */,
 				556CD3C2211CB0DB007260E7 /* ViewModels */,
-				556CD3BF211CA439007260E7 /* Managers */,
+				55CE8E7A211DC100007AD9C5 /* ViewControllers */,
 				556CD3AD211C9B93007260E7 /* AppDelegate.swift */,
-				556CD3AF211C9B93007260E7 /* SearchViewController.swift */,
-				55CE8E6C211D047A007AD9C5 /* QuestionsDataSource.swift */,
 				556CD3B1211C9B93007260E7 /* Main.storyboard */,
 				556CD3B4211C9B96007260E7 /* Assets.xcassets */,
 				556CD3B6211C9B96007260E7 /* LaunchScreen.storyboard */,
@@ -129,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				556CD3C6211CC556007260E7 /* QuestionsViewModel.swift */,
+				55CE8E72211D8BFA007AD9C5 /* AnswersViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -137,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				556CD3C4211CB169007260E7 /* Question.swift */,
+				55CE8E70211D8A2D007AD9C5 /* Answer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,6 +171,8 @@
 			children = (
 				55CE8E59211CFB8A007AD9C5 /* QuestionTableViewCell.swift */,
 				55CE8E5A211CFB8A007AD9C5 /* QuestionTableViewCell.xib */,
+				55CE8E74211DA1EB007AD9C5 /* AnswerTableViewCell.swift */,
+				55CE8E75211DA1EB007AD9C5 /* AnswerTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +186,33 @@
 				55CE8E6A211D0249007AD9C5 /* TableArrayDataSource.swift */,
 			);
 			path = TableViewGeneric;
+			sourceTree = "<group>";
+		};
+		55CE8E7A211DC100007AD9C5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				55CE8E7B211DC180007AD9C5 /* Search */,
+				55CE8E7C211DC194007AD9C5 /* Details */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		55CE8E7B211DC180007AD9C5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				556CD3AF211C9B93007260E7 /* SearchViewController.swift */,
+				55CE8E6C211D047A007AD9C5 /* QuestionsDataSource.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		55CE8E7C211DC194007AD9C5 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				55CE8E6E211D82E9007AD9C5 /* DetailsViewController.swift */,
+				55CE8E78211DA7A5007AD9C5 /* AnswersDataSource.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		BFFCA53558529910D2F9D9BF /* Frameworks */ = {
@@ -243,6 +285,7 @@
 			files = (
 				556CD3B8211C9B96007260E7 /* LaunchScreen.storyboard in Resources */,
 				55CE8E5C211CFB8A007AD9C5 /* QuestionTableViewCell.xib in Resources */,
+				55CE8E77211DA1EB007AD9C5 /* AnswerTableViewCell.xib in Resources */,
 				556CD3B5211C9B96007260E7 /* Assets.xcassets in Resources */,
 				556CD3B3211C9B93007260E7 /* Main.storyboard in Resources */,
 			);
@@ -296,13 +339,18 @@
 			files = (
 				556CD3C1211CA44F007260E7 /* NetworkManager.swift in Sources */,
 				55CE8E5B211CFB8A007AD9C5 /* QuestionTableViewCell.swift in Sources */,
+				55CE8E79211DA7A5007AD9C5 /* AnswersDataSource.swift in Sources */,
 				556CD3C9211CF049007260E7 /* DesignManager.swift in Sources */,
+				55CE8E76211DA1EB007AD9C5 /* AnswerTableViewCell.swift in Sources */,
+				55CE8E71211D8A2D007AD9C5 /* Answer.swift in Sources */,
 				556CD3C7211CC556007260E7 /* QuestionsViewModel.swift in Sources */,
 				55CE8E57211CF689007AD9C5 /* Spinner.swift in Sources */,
 				55CE8E6B211D0249007AD9C5 /* TableArrayDataSource.swift in Sources */,
 				55CE8E69211D021B007AD9C5 /* TableArrayDataProvider.swift in Sources */,
 				55CE8E61211D0121007AD9C5 /* TableDataProvider.swift in Sources */,
 				556CD3C5211CB169007260E7 /* Question.swift in Sources */,
+				55CE8E73211D8BFA007AD9C5 /* AnswersViewModel.swift in Sources */,
+				55CE8E6F211D82E9007AD9C5 /* DetailsViewController.swift in Sources */,
 				556CD3B0211C9B93007260E7 /* SearchViewController.swift in Sources */,
 				55CE8E6D211D047A007AD9C5 /* QuestionsDataSource.swift in Sources */,
 				556CD3AE211C9B93007260E7 /* AppDelegate.swift in Sources */,
@@ -455,10 +503,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MZ45C4J948;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HelperSO/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,10 +525,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MZ45C4J948;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HelperSO/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

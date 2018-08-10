@@ -16,10 +16,13 @@ struct Question: Codable {
     let acceptedAnswerId: Int?
     let answerCount: Int
     let score: Int
-    let creationDate: Date
+    var creationDate: Int
     let questionId: Int
     let link: String
-    let title: String
+    var title: String
+    
+    //MARK: Custom
+    var creationDateString: String?
 }
 
 extension Question {

@@ -36,8 +36,14 @@ class QuestionsViewModel: NSObject {
             }
         }
         
+        newQuestions = newQuestions.map { (question) -> Question in
+            var updatedQuestion = question
+            updatedQuestion.title = question.title.stringWithDecodedHTMLChars
+            updatedQuestion.creationDateString = Utils.getDateStringFromTimeStamp(timeStamp: Double(question.creationDate))
+            return updatedQuestion
+        }
+        
         newQuestions.sort(by: {$0.score > $1.score} )
         questions = newQuestions
-        print("Success decoding")
     }
 }

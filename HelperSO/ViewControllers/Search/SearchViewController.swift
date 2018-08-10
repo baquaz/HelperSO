@@ -21,13 +21,14 @@ class SearchViewController: UIViewController {
         static let title = "SEARCH"
         static let searchPlaceholder = "Search your topic"
         static let tableRowHeigh: CGFloat = 110.0
+        static let detailsSegue = "DetailsSegue"
     }
     
     //MARK: View Model
     lazy var questionsViewModel: QuestionsViewModel = {
        return QuestionsViewModel()
     }()
-    
+
     //MARK: - Lifetime
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,7 @@ class SearchViewController: UIViewController {
         questionsDataSource = QuestionsDataSource(tableView: tableView, array: questionsViewModel.questions)
         questionsDataSource?.tableItemSelectionHandler = { [unowned self] (indexPath) in
             print("Did select: \(indexPath.row)")
+            self.performSegue(withIdentifier: Constants.detailsSegue, sender: self.questionsDataSource?.item(at: indexPath))
         }
     }
     
@@ -92,6 +94,17 @@ class SearchViewController: UIViewController {
             Spinner.stop()
             //<#MARK: TODO - popup error#>
             print("Error: \(message)")
+        }
+    }
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let details = segue.destination as? DetailsViewController {
+            guard let question = sender as? Question else {
+                print("Unexpected error - question is missing")
+                return
+            }
+            details.question = question
         }
     }
 }
