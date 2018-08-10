@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0up-Yc-qsK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="gn0-s1-aK0">
+            <objects>
+                <navigationController id="0up-Yc-qsK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nzn-MR-ZHf">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Pj0-sD-UPD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GmT-Np-9hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-818" y="33"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="HelperSO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="nak-68-Qv2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Ca-hI-ejv">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nak-68-Qv2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NkK-Bu-8B5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Ca-hI-ejv" secondAttribute="trailing" id="QCT-Ef-era"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Ca-hI-ejv" secondAttribute="bottom" id="bIh-bU-tNC"/>
+                            <constraint firstItem="nak-68-Qv2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bc4-kw-sSz"/>
+                            <constraint firstItem="1Ca-hI-ejv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g60-7Z-0XD"/>
+                            <constraint firstItem="nak-68-Qv2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gUF-Am-aiZ"/>
+                            <constraint firstItem="1Ca-hI-ejv" firstAttribute="top" secondItem="nak-68-Qv2" secondAttribute="bottom" id="giS-TL-p6I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LWV-IC-S6U"/>
+                    <connections>
+                        <outlet property="searchBar" destination="nak-68-Qv2" id="G92-HJ-Ta8"/>
+                        <outlet property="searchDisplayController" destination="pi0-u2-8IX" id="dOk-R5-rkT"/>
+                        <outlet property="tableView" destination="1Ca-hI-ejv" id="La8-Hj-q32"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="pi0-u2-8IX">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="U4c-td-y70"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="JEN-4e-ec6"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="0ec-Gf-BGK"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="EQj-lX-Khy"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+        </scene>
+    </scenes>
+</document>
